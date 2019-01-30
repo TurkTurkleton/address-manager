@@ -11,7 +11,9 @@ applications:
     TARGET_RUNTIME: tomee
     JBP_CONFIG_SAPJVM_MEMORY_SIZES: 'metaspace:96m..'
     SET_LOGGING_LEVEL: '{ROOT: INFO, com.sap.cloud.sdk: INFO}'
-    ALLOW_MOCKED_AUTH_HEADER: true
+    #ALLOW_MOCKED_AUTH_HEADER: true
+    #Using destination from Destination Service (see services)
+    #destinations: "[{name: 'ErpQueryEndpoint', url: 'https://bupa-mock-data....', username: 'DUMMY', password: 'dummy'}]"
   services:
   - my-xsuaa
   - my-destination

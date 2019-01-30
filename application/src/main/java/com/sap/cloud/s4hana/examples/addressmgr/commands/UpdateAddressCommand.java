@@ -19,7 +19,6 @@ public class UpdateAddressCommand {
     }
 
     public Integer execute() throws Exception {
-
         ODataUpdateResult oDataUpdateResult = service
                 .updateBusinessPartnerAddress(addressToUpdate).execute();
 
