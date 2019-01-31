@@ -17,5 +17,6 @@ applications:
   services:
   - my-xsuaa
   - my-destination
+  - my-postgresql
 #  - my-connectivity
 #  - my-application-logs

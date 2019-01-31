@@ -43,11 +43,6 @@ public class GetAllBusinessPartnersCommand extends CachingErpCommand<List<Busine
         return CacheKey.ofTenantIsolation();
     }
 
-    protected List<BusinessPartner> getFallback() {
-        logger.warn("Fallback called because of exception:", getExecutionException());
-        return Collections.emptyList();
-    }
-
     @Override
     protected List<BusinessPartner> runCacheable() throws Exception {
         return service
@@ -56,6 +51,12 @@ public class GetAllBusinessPartnersCommand extends CachingErpCommand<List<Busine
                 .filter(BusinessPartner.BUSINESS_PARTNER_CATEGORY.eq(CATEGORY_PERSON))
                 .orderBy(BusinessPartner.LAST_NAME, Order.ASC)
                 .execute();
+    }
+
+    @Override
+    protected List<BusinessPartner> getFallback() {
+        logger.warn("Fallback called because of exception:", getExecutionException());
+        return Collections.emptyList();
     }
 
 }
