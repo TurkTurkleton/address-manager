@@ -28,10 +28,7 @@ public class TenantProvisioningServlet extends HttpServlet {
 
     @Override
     protected void doPut(final HttpServletRequest request, final HttpServletResponse response ) throws IOException {
-
-        logger.info("Creating new Tenant");
         final String tenantId = retrieveTenantId(request);
-        logger.info("Creating new Tenant {}",tenantId);
 
         try {
             final EntityManager entityManager = GenericEntityManagerFacade.getInstance().getEntityManager();
