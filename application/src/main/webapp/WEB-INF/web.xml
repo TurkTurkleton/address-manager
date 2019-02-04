@@ -42,17 +42,15 @@
             <filter-name>springSecurityFilterChain</filter-name>
             <url-pattern>/*</url-pattern>
         </filter-mapping>
-
-
-    <filter>
-        <filter-name>RestCsrfPreventionFilter</filter-name>
-        <filter-class>org.apache.catalina.filters.RestCsrfPreventionFilter</filter-class>
-    </filter>
-    <filter-mapping>
-        <filter-name>RestCsrfPreventionFilter</filter-name>
-        <url-pattern>/*</url-pattern>
-    </filter-mapping>
-            -->
+        <filter>
+            <filter-name>RestCsrfPreventionFilter</filter-name>
+            <filter-class>org.apache.catalina.filters.RestCsrfPreventionFilter</filter-class>
+        </filter>
+        <filter-mapping>
+            <filter-name>RestCsrfPreventionFilter</filter-name>
+            <url-pattern>/*</url-pattern>
+        </filter-mapping>
+        -->
 
     <filter>
         <filter-name>HttpSecurityHeadersFilter</filter-name>
